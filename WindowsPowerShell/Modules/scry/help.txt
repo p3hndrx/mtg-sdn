@@ -1,0 +1,108 @@
+c: -c:	 		(param- color/coloridentity)- tip: abzan, azorius, etc.
+t:		 		(param- "type")
+o:				(param- "oracle text")- tip: ~ = cardname
+m: mana: 		(param- "mana")- tip: {g}{u} -or {2/G}
+cmc 			(param- "cmc")- tip:  >, <, =, >=, <=, and !=
+pow, tou, loy 	(param- "power, toughness, loyalty")- tip:  >, <, =, >=, <=, and !=
+r:				(param- "rarity")
+s: e:			(param- "set")- tip: DTK, C17, etc.
+b:				(param- "block")
+st:				(param- "product")- tip: portal, playerrewards, duels, setpromo, core, etc
+f:				(param- "format")- tip: modern, duel, commander, etc.
+year			(param- "year")- tip:  >, <, =, >=, <=, and !=
+in:				(param- "included in games")- tip: paper, mtgo, arena
+is:				(param- "is:xxxxx")
+
+
+
+is:meld				 - Cards that meld
+is:split			 - Split-faced cards
+c:brm is:spell f:duel	- Black and red multicolor spells in Duel Commander
+is:permanent t:rebel	- Rebel permanents
+is:vanilla			 - Vanilla creatures
+is:funny			 - All funny cards
+e:ktk is:unique		 - Cards that were in Khans of Tarkir and not printed in any other set
+is:commander		 - Cards that can be your commander
+is:reserved			 - Cards on the Reserved
+is:new r:mythic		 - Mythic cards with the 2015 holofoil-stamp frame
+is:old t:artifact	 - Artifacts in either the 1993 or 1997 variant of the 'classic' frame
+is:hires			 - Cards with high-resolution scans
+is:promo			 - Promotional cards
+is:spotlight		 - Story Spotlight cards
+is:timeshifted
+is:colorshifted		 - Colorshifted cards
+is:*land			 - e.g. shockland
+is:bikeland 		 - Alias cycleland, bicycleland
+is:bounceland 		 - Alias karoo
+is:checkland 
+is:dual 
+is:fastland
+is:fetchland
+is:filterland
+is:gainland
+is:painland
+is:scryland
+is:shadowland
+is:shockland
+is:storageland
+is:tangoland 		 - Alias battleland
+
+You can find all Masterpiece Series cards with is:masterpiece
+
+c:rg 				 - Cards that are red and green (color)
+color>=uw -c:red	 - Cards that are at least white and blue, but not red (color)
+id<=esper t:instant  - Instants you can play with an Esper commander (color identity)
+id:c t:land			 - Land cards with colorless identity (color+type)
+t:merfolk t:legend	 - Legendary merfolk cards
+t:goblin -t:creature - Goblin cards that aren’t creatures
+o:draw t:creature	 - Creatures that deal with drawing cards
+o:"~ enters the battlefield tapped" - Cards that enter the battlefield tapped
+mana:{G}{U}			 - Cards with one green and blue mana in their costs
+m:2WW				 - Cards with two generic and two white mana in their cost
+m:{R/P}			 	 - Cards with one Phyrexian red mana in their cost
+c:u cmc=5			 - Blue cards with converted mana cost 5
+pow>=8				 - Cards with 8 or more power
+pow>tou c:w t:creature 	- White creatures that are top-heavy
+t:planeswalker loy=3	- Planeswalkers that start at 3 loyalty
+t:scheme			 - Scheme cards
+power include:extras - Cards with “power” in their name, including extras
+r:common t:artifact  - Common artifacts
+e:mm2 				 - Cards from the Modern Masters 2015 set
+b:wwk				 - Cards in Zendikar Block (but using the Worldwake set code)
+e:c16 not:reprint	 - Cards that were new in Commander 2016
+in:lea in:m15		 - Cards that were in both Alpha and Magic 2015
+sets>=20			 - Cards that have been printed in 20 or more distinct sets
+e:arn papersets=1	 - Cards that were printed in Arabian Nights but never printed in paper
+t:legendary -in:booster	- Legendary cards that have never been printed in a booster set
+cube:vintage		 - Cards in the Vintage Cube
+cube:modern t:planeswalker	- Planeswalkers in the Modern Cube
+c:g t:creature f:pauper		- Green creatures in Pauper format
+banned:legacy		 - Cards banned in Legacy format
+tix>15.00			 - Cards that cost more than 15 TIX at MTGO stores
+usd>=0.50 e:ema		 - Cards worth 50¢ or more in Eternal Masters
+a:"proce"			 - Cards illustrated by Vincent Proce
+ft:mishra			 - Cards that mention Mishra in their flavor text
+ft:designed e:m15	 - Cards created by guest designers in Magic 2015
+wm:orzhov			 - Cards with Orzhov guild watermark
+border:white t:creature		- White-bordered creature cards
+game:arena			 - Cards available on MTG:Arena
+-in:mtgo f:legacy	 - Legacy legal cards not available on MTGO
+year<=1994			 - Cards from 1994 and before
+year=2017			 - Cards released this year
+-fire c:r t:instant	 - Red instants without the word “fire” in their name
+o:changeling -t:creature		- Changeling cards that aren’t creatures
+not:reprint e:c16				- Cards in Commander 2016 that aren’t reprints
+t:creature re:"^{T}:"			- Creatures that tap with no other payment
+t:instant re:"+\d/+\d"			- Instants that provide +X/+X effects
+t:land re:"({W}|{U}|any)"		- Lands that mention white, blue, or “any” mana
+!fire				 - The card Fire
+!"sift through sands"			- The card Sift Through Sands
+++!"Lightning Bolt"				- Every printing of Lightning Bolt
+++t:forest a:"john avon"		- Every Forest illustrated by John Avon
+++yamazaki						- Both Brothers Yamazaki
+++e:all			- Every card, including alternate arts, in Alliances
+t:fish or t:bird		- Cards that are Fish or Birds
+t:land (a:titus or a:bradley)	- Lands illustrated by Titus Lunter of Noah Bradley
+t:legendary (t:goblin or t:elf)	- Legendary goblins or elves
+through (depths or sands or mists)	- The Unspeakable combo
+
