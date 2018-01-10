@@ -73,21 +73,13 @@
                             $filename = [System.IO.Path]::GetFileName($fUri.LocalPath); 
                             $response.Close()
 
-                            #check for file exists
                             $target = "$scrypath\$filename"
-                            $tp = test-path $target
-                            $i = 0;
-                            if($tp -eq $true) {
-                                do{ 
-                                $i++
-                                $target = "$scrypath\$i-$filename"
-                                $tp = test-path $target
-                                }until($tp -eq $false)
-                                }
-
                             wget $url -outfile $target
-                            # $url
-                            # start chrome $url
+                            $ren = "$scrypath\$n.png"
+                            
+                            #rename
+                            mv $target $ren.Replace('"','')
+
                           }
                     default {}
 
